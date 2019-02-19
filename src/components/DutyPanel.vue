@@ -348,12 +348,12 @@ export default {
           this.month.getFullYear(),
           this.month.getMonth() + 1
         );
-      const num = ((dayNum + firstOfWeek) / 8) | (0 + 1);
+      const num = ((dayNum + firstOfWeek) / 8) + 1;
       for (let i = 0; i < num; i++) {
         dutyArr[i] = {};
         for (let j = 0; j < 8; j++) {
           if (i === num - 1) {
-            if(j === ((dayNum + firstOfWeek) % 8) - 1){
+            if (j === ((dayNum + firstOfWeek) % 8) - 1) {
               break;
             }
           }
