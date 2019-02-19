@@ -352,6 +352,11 @@ export default {
       for (let i = 0; i < num; i++) {
         dutyArr[i] = {};
         for (let j = 0; j < 8; j++) {
+          if (i === num - 1) {
+            if(j === ((dayNum + firstOfWeek) % 8) - 1){
+              break;
+            }
+          }
           if (j === 0) {
             dutyArr[i]["shift"] = "test";
             continue;
