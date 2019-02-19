@@ -130,7 +130,7 @@ export default {
         },
         {
           title: "周一",
-          key: "mon",
+          key: "day1",
           align: "center",
           render: (h, params) => {
             return h("div", [
@@ -139,51 +139,183 @@ export default {
                 {
                   props: {
                     day: "1",
-                    list: params.row.mon,
+                    list: params.row.day1,
                     type: "dot",
                     color: "primary"
                   },
                   style: {},
                   on: {
                     click: () => {
-                      console.log(params.row.mon);
+                      console.log(params.row.day1);
                     }
                   }
                 },
-                params.row.mon
+                params.row.day1
               )
             ]);
           }
         },
         {
           title: "周二",
-          key: "tues",
-          align: "center"
+          key: "day2",
+          align: "center",
+          render: (h, params) => {
+            return h("div", [
+              h(
+                "DutyItem",
+                {
+                  props: {
+                    day: "1",
+                    list: params.row.day2,
+                    type: "dot",
+                    color: "primary"
+                  },
+                  style: {},
+                  on: {
+                    click: () => {
+                      console.log(params.row.day2);
+                    }
+                  }
+                },
+                params.row.day2
+              )
+            ]);
+          }
         },
         {
           title: "周三",
-          key: "wed",
-          align: "center"
+          key: "day3",
+          align: "center",
+          render: (h, params) => {
+            return h("div", [
+              h(
+                "DutyItem",
+                {
+                  props: {
+                    day: "1",
+                    list: params.row.day3,
+                    type: "dot",
+                    color: "primary"
+                  },
+                  style: {},
+                  on: {
+                    click: () => {
+                      console.log(params.row.day3);
+                    }
+                  }
+                },
+                params.row.day3
+              )
+            ]);
+          }
         },
         {
           title: "周四",
-          key: "thur",
-          align: "center"
+          key: "day4",
+          align: "center",
+          render: (h, params) => {
+            return h("div", [
+              h(
+                "DutyItem",
+                {
+                  props: {
+                    day: "1",
+                    list: params.row.day4,
+                    type: "dot",
+                    color: "primary"
+                  },
+                  style: {},
+                  on: {
+                    click: () => {
+                      console.log(params.row.day4);
+                    }
+                  }
+                },
+                params.row.day4
+              )
+            ]);
+          }
         },
         {
           title: "周五",
-          key: "fri",
-          align: "center"
+          key: "day5",
+          align: "center",
+          render: (h, params) => {
+            return h("div", [
+              h(
+                "DutyItem",
+                {
+                  props: {
+                    day: "1",
+                    list: params.row.day5,
+                    type: "dot",
+                    color: "primary"
+                  },
+                  style: {},
+                  on: {
+                    click: () => {
+                      console.log(params.row.day5);
+                    }
+                  }
+                },
+                params.row.day5
+              )
+            ]);
+          }
         },
         {
           title: "周六",
-          key: "sat",
-          align: "center"
+          key: "day6",
+          align: "center",
+          render: (h, params) => {
+            return h("div", [
+              h(
+                "DutyItem",
+                {
+                  props: {
+                    day: "1",
+                    list: params.row.day6,
+                    type: "dot",
+                    color: "primary"
+                  },
+                  style: {},
+                  on: {
+                    click: () => {
+                      console.log(params.row.day6);
+                    }
+                  }
+                },
+                params.row.day6
+              )
+            ]);
+          }
         },
         {
           title: "周日",
-          key: "sun",
-          align: "center"
+          key: "day7",
+          align: "center",
+          render: (h, params) => {
+            return h("div", [
+              h(
+                "DutyItem",
+                {
+                  props: {
+                    day: "1",
+                    list: params.row.day7,
+                    type: "dot",
+                    color: "primary"
+                  },
+                  style: {},
+                  on: {
+                    click: () => {
+                      console.log(params.row.day7);
+                    }
+                  }
+                },
+                params.row.day7
+              )
+            ]);
+          }
         }
       ],
       monthData: []
@@ -216,25 +348,22 @@ export default {
           this.month.getFullYear(),
           this.month.getMonth() + 1
         );
-      let weekObj = {
-        mon: "0",
-        tues: "1",
-        wed: "2",
-        thur: "3",
-        fri: "4",
-        sat: "5",
-        sun: "6"
-      };
-      dutyArr[0] = {
-        shift: "班组1",
-        mon: [1, 2],
-        tues: ["班组1", "班组2"],
-        wed: "3",
-        thur: "4",
-        fri: "5",
-        sat: "6",
-        sun: "7"
-      };
+      const num = ((dayNum + firstOfWeek) / 8) | (0 + 1);
+      for (let i = 0; i < num; i++) {
+        dutyArr[i] = {};
+        for (let j = 0; j < 8; j++) {
+          if (j === 0) {
+            dutyArr[i]["shift"] = "test";
+            continue;
+          }
+          if (i === 0 && j < firstOfWeek) {
+            dutyArr[i]["day" + j] = [];
+          } else {
+            dutyArr[i]["day" + j] = [1, 2];
+          }
+        }
+      }
+      this.monthData = dutyArr;
     }
   }
 };
