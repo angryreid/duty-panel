@@ -138,7 +138,7 @@ export default {
                 "DutyItem",
                 {
                   props: {
-                    day: "1",
+                    day: params.row.oneDay1,
                     list: params.row.day1,
                     type: "dot",
                     color: "primary"
@@ -165,7 +165,7 @@ export default {
                 "DutyItem",
                 {
                   props: {
-                    day: "1",
+                    day: params.row.oneDay2,
                     list: params.row.day2,
                     type: "dot",
                     color: "primary"
@@ -192,7 +192,7 @@ export default {
                 "DutyItem",
                 {
                   props: {
-                    day: "1",
+                    day: params.row.oneDay3,
                     list: params.row.day3,
                     type: "dot",
                     color: "primary"
@@ -219,7 +219,7 @@ export default {
                 "DutyItem",
                 {
                   props: {
-                    day: "1",
+                    day: params.row.oneDay4,
                     list: params.row.day4,
                     type: "dot",
                     color: "primary"
@@ -246,7 +246,7 @@ export default {
                 "DutyItem",
                 {
                   props: {
-                    day: "1",
+                    day: params.row.oneDay5,
                     list: params.row.day5,
                     type: "dot",
                     color: "primary"
@@ -273,7 +273,7 @@ export default {
                 "DutyItem",
                 {
                   props: {
-                    day: "1",
+                    day: params.row.oneDay6,
                     list: params.row.day6,
                     type: "dot",
                     color: "primary"
@@ -300,7 +300,7 @@ export default {
                 "DutyItem",
                 {
                   props: {
-                    day: "1",
+                    day: params.row.oneDay7,
                     list: params.row.day7,
                     type: "dot",
                     color: "primary"
@@ -346,28 +346,40 @@ export default {
         dutyArr = [],
         firstOfWeek = this.getFirstDayWeek(
           this.month.getFullYear(),
-          this.month.getMonth() + 1
+          this.month.getMonth()
         );
-      const num = ((dayNum + firstOfWeek) / 8) + 1;
+      let num = 0;
+      // 日历显示行数
+      if ((dayNum + firstOfWeek - 1) % 7 === 0) {
+        num = (dayNum + firstOfWeek - 1) / 7;
+      } else {
+        num = parseInt((dayNum + firstOfWeek - 1) / 7 + 1);
+      }
       for (let i = 0; i < num; i++) {
         dutyArr[i] = {};
         for (let j = 0; j < 8; j++) {
+          let oneDay = i * 8 + j - firstOfWeek + 1;
           if (i === num - 1) {
-            if (j === ((dayNum + firstOfWeek) % 8) - 1) {
+            // 判断最后一行显示多少数据
+            if (j > (dayNum + firstOfWeek - 1 + num - 1) % 8) {
               break;
             }
           }
+          // 班次信息填充
           if (j === 0) {
-            dutyArr[i]["shift"] = "test";
+            dutyArr[i]["shift"] = "test_" + i;
             continue;
           }
+          // 值班信息填充
           if (i === 0 && j < firstOfWeek) {
             dutyArr[i]["day" + j] = [];
           } else {
             dutyArr[i]["day" + j] = [1, 2];
+            dutyArr[i]["oneDay" + j] = i > 0 ? oneDay - i : oneDay;
           }
         }
       }
+      console.log(dutyArr);
       this.monthData = dutyArr;
     }
   }

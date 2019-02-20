@@ -11,8 +11,8 @@ export default {
   name: "DutyItem",
   props: {
     day: {
-      type: String,
-      default: ""
+      type: Number,
+      default: 0
     },
     list: {
       type: Array,
