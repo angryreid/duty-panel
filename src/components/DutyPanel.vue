@@ -57,7 +57,7 @@
     <!-- 月份 -->
     <Row class="mb p20" v-show="type == 2">
       <Col span="24">
-        <Table :columns="monthColumns" :border="true" :data="monthData"></Table>
+        <Table :columns="monthColumns" :border="true" :data="monthData" disabled-hover></Table>
       </Col>
     </Row>
   </div>
@@ -359,6 +359,7 @@ export default {
         dutyArr[i] = {};
         for (let j = 0; j < 8; j++) {
           let oneDay = i * 8 + j - firstOfWeek + 1;
+          oneDay = i > 0 ? oneDay - i : oneDay;
           if (i === num - 1) {
             // 判断最后一行显示多少数据
             if (j > (dayNum + firstOfWeek - 1 + num - 1) % 8) {
@@ -374,8 +375,9 @@ export default {
           if (i === 0 && j < firstOfWeek) {
             dutyArr[i]["day" + j] = [];
           } else {
-            dutyArr[i]["day" + j] = [1, 2];
-            dutyArr[i]["oneDay" + j] = i > 0 ? oneDay - i : oneDay;
+            // 值班数据绑定
+            dutyArr[i]["day" + j] = ["123","hello world","test"];
+            dutyArr[i]["oneDay" + j] = oneDay;
           }
         }
       }

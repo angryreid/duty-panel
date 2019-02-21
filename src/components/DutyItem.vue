@@ -1,9 +1,16 @@
 <template>
   <div>
     <h6 v-show="list.length">{{day}}</h6>
-    <div v-for="item in list">
+    <Poptip
+      trigger="hover"
+      title="Title"
+      content="content"
+      placement="right-start"
+      v-for="(item,index) in list"
+      :key="index"
+    >
       <Tag :type="type" :color="color">{{item}}</Tag>
-    </div>
+    </Poptip>
   </div>
 </template>
 <script>
@@ -30,11 +37,7 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    showDutyItem(item) {
-      console.log(item);
-    }
-  }
+  methods: {}
 };
 </script>
 <style scoped>
