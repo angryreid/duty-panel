@@ -134,24 +134,14 @@ export default {
           align: "center",
           render: (h, params) => {
             return h("div", [
-              h(
-                "DutyItem",
-                {
-                  props: {
-                    day: params.row.oneDay1,
-                    list: params.row.day1,
-                    type: "dot",
-                    color: "primary"
-                  },
-                  style: {},
-                  on: {
-                    click: () => {
-                      console.log(params.row.day1);
-                    }
-                  }
-                },
-                params.row.day1
-              )
+              h("DutyItem", {
+                props: {
+                  day: params.row.oneDay1,
+                  list: params.row.day1,
+                  type: "dot",
+                  color: "primary"
+                }
+              })
             ]);
           }
         },
@@ -161,24 +151,20 @@ export default {
           align: "center",
           render: (h, params) => {
             return h("div", [
-              h(
-                "DutyItem",
-                {
-                  props: {
-                    day: params.row.oneDay2,
-                    list: params.row.day2,
-                    type: "dot",
-                    color: "primary"
-                  },
-                  style: {},
-                  on: {
-                    click: () => {
-                      console.log(params.row.day2);
-                    }
-                  }
+              h("DutyItem", {
+                props: {
+                  day: params.row.oneDay2,
+                  list: params.row.day2,
+                  type: "dot",
+                  color: "primary"
                 },
-                params.row.day2
-              )
+                style: {},
+                on: {
+                  click: () => {
+                    console.log(params.row.day2);
+                  }
+                }
+              })
             ]);
           }
         },
@@ -188,24 +174,20 @@ export default {
           align: "center",
           render: (h, params) => {
             return h("div", [
-              h(
-                "DutyItem",
-                {
-                  props: {
-                    day: params.row.oneDay3,
-                    list: params.row.day3,
-                    type: "dot",
-                    color: "primary"
-                  },
-                  style: {},
-                  on: {
-                    click: () => {
-                      console.log(params.row.day3);
-                    }
-                  }
+              h("DutyItem", {
+                props: {
+                  day: params.row.oneDay3,
+                  list: params.row.day3,
+                  type: "dot",
+                  color: "primary"
                 },
-                params.row.day3
-              )
+                style: {},
+                on: {
+                  click: () => {
+                    console.log(params.row.day3);
+                  }
+                }
+              })
             ]);
           }
         },
@@ -215,24 +197,20 @@ export default {
           align: "center",
           render: (h, params) => {
             return h("div", [
-              h(
-                "DutyItem",
-                {
-                  props: {
-                    day: params.row.oneDay4,
-                    list: params.row.day4,
-                    type: "dot",
-                    color: "primary"
-                  },
-                  style: {},
-                  on: {
-                    click: () => {
-                      console.log(params.row.day4);
-                    }
-                  }
+              h("DutyItem", {
+                props: {
+                  day: params.row.oneDay4,
+                  list: params.row.day4,
+                  type: "dot",
+                  color: "primary"
                 },
-                params.row.day4
-              )
+                style: {},
+                on: {
+                  click: () => {
+                    console.log(params.row.day4);
+                  }
+                }
+              })
             ]);
           }
         },
@@ -242,24 +220,20 @@ export default {
           align: "center",
           render: (h, params) => {
             return h("div", [
-              h(
-                "DutyItem",
-                {
-                  props: {
-                    day: params.row.oneDay5,
-                    list: params.row.day5,
-                    type: "dot",
-                    color: "primary"
-                  },
-                  style: {},
-                  on: {
-                    click: () => {
-                      console.log(params.row.day5);
-                    }
-                  }
+              h("DutyItem", {
+                props: {
+                  day: params.row.oneDay5,
+                  list: params.row.day5,
+                  type: "dot",
+                  color: "primary"
                 },
-                params.row.day5
-              )
+                style: {},
+                on: {
+                  click: () => {
+                    console.log(params.row.day5);
+                  }
+                }
+              })
             ]);
           }
         },
@@ -269,24 +243,20 @@ export default {
           align: "center",
           render: (h, params) => {
             return h("div", [
-              h(
-                "DutyItem",
-                {
-                  props: {
-                    day: params.row.oneDay6,
-                    list: params.row.day6,
-                    type: "dot",
-                    color: "primary"
-                  },
-                  style: {},
-                  on: {
-                    click: () => {
-                      console.log(params.row.day6);
-                    }
-                  }
+              h("DutyItem", {
+                props: {
+                  day: params.row.oneDay6,
+                  list: params.row.day6,
+                  type: "dot",
+                  color: "primary"
                 },
-                params.row.day6
-              )
+                style: {},
+                on: {
+                  click: () => {
+                    console.log(params.row.day6);
+                  }
+                }
+              })
             ]);
           }
         },
@@ -296,24 +266,20 @@ export default {
           align: "center",
           render: (h, params) => {
             return h("div", [
-              h(
-                "DutyItem",
-                {
-                  props: {
-                    day: params.row.oneDay7,
-                    list: params.row.day7,
-                    type: "dot",
-                    color: "primary"
-                  },
-                  style: {},
-                  on: {
-                    click: () => {
-                      console.log(params.row.day7);
-                    }
-                  }
+              h("DutyItem", {
+                props: {
+                  day: params.row.oneDay7,
+                  list: params.row.day7,
+                  type: "dot",
+                  color: "primary"
                 },
-                params.row.day7
-              )
+                style: {},
+                on: {
+                  click: () => {
+                    console.log(params.row.day7);
+                  }
+                }
+              })
             ]);
           }
         }
@@ -376,12 +342,11 @@ export default {
             dutyArr[i]["day" + j] = [];
           } else {
             // 值班数据绑定
-            dutyArr[i]["day" + j] = ["123","hello world","test"];
+            dutyArr[i]["day" + j] = ["123", "hello world", "test"];
             dutyArr[i]["oneDay" + j] = oneDay;
           }
         }
       }
-      console.log(dutyArr);
       this.monthData = dutyArr;
     }
   }

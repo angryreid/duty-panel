@@ -4,12 +4,12 @@
     <Poptip
       trigger="hover"
       title="Title"
-      content="content"
+      :content="item"
       placement="right-start"
       v-for="(item,index) in list"
       :key="index"
     >
-      <Tag :type="type" :color="color">{{item}}</Tag>
+      <Tag :type="type" :color="color" @click.native="handleClick(item)">{{item}}</Tag>
     </Poptip>
   </div>
 </template>
@@ -37,7 +37,11 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {
+    handleClick(item) {
+      console.log(item);
+    }
+  }
 };
 </script>
 <style scoped>
